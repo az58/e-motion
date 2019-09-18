@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('mysql-pawolanmwen.alwaysdata.net', 'mysql-pawolanmwen.alwaysdata.net'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('pawolanmwen_emotion', 'pawolanmwen_emotion'),
+            'username' => env('106139_emotion', '106139_emotion'),
+            'password' => env('jJ76"ù)8RcUdretse5', 'jJ76"ù)8RcUdretse5'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
