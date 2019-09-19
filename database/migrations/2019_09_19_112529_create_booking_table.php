@@ -19,11 +19,11 @@ class CreateBookingTable extends Migration
             $table->UnsignedbigInteger('vehicle_id')->unsigned();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
-            $table->date('state')->nullable();
-            $table->date('booking_price')->nullable();
-            $table->date('cb_number')->nullable();
-            $table->date('cb_cvv')->nullable();
-            $table->date('cb_expire')->nullable();
+            $table->string('state',100)->nullable();
+            $table->string('booking_price',20)->nullable();
+            $table->string('cb_number',20)->nullable();
+            $table->string('cb_cvv', 4)->nullable();
+            $table->string('cb_expire', 5)->nullable();
 
             $table->foreign('customer_id')->references('id')->on('customer')
                 ->onDelete('cascade');
