@@ -15,7 +15,7 @@ class CreateVehicleTable extends Migration
     {
         Schema::create('vehicle', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->boolean('category'); // category = type de la véhicule
+            $table->enum('category', ['car','scooter']); // category = type de la véhicule
             $table->string('brand', 100)->nullable(); // brand = marque
             $table->string('type', 100)->nullable(); // type = modèle
             $table->string('color', 20)->nullable(); // color =  couleur
