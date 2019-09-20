@@ -15,7 +15,7 @@ class CreateBookingTable extends Migration
     {
         Schema::create('booking', function (Blueprint $table) {
             $table->increments('id');
-            $table->UnsignedBigInteger('customer_id')->unsigned();
+            $table->Integer('user_id')->unsigned();
             $table->UnsignedbigInteger('vehicle_id')->unsigned();
             $table->date('start_date');
             $table->date('end_date');
@@ -28,7 +28,7 @@ class CreateBookingTable extends Migration
             $table->string('cb_expire', 5);
             $table->string('cb_cvv', 4);
 
-            $table->foreign('customer_id')->references('id')->on('customer')
+            $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');
             $table->foreign('vehicle_id')->references('id')->on('vehicle')
                 ->onDelete('cascade');
