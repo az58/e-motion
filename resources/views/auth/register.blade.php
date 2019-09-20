@@ -11,29 +11,29 @@
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('FirstName') ? ' has-error' : '' }}">
-                            <label for="FirstName" class="col-md-4 control-label">FirstName</label>
+                        <div class="form-group{{ $errors->has('Nom') ? ' has-error' : '' }}">
+                            <label for="Nom" class="col-md-4 control-label">Nom</label>
 
                             <div class="col-md-6">
-                                <input id="FirstName" type="text" class="form-control" name="FirstName" value="{{ old('FirstName') }}" required autofocus>
+                                <input id="Nom" type="text" class="form-control" name="Nom" value="{{ old('Nom') }}" required autofocus>
 
-                                @if ($errors->has('FirstName'))
+                                @if ($errors->has('Nom'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('FirstName') }}</strong>
+                                        <strong>{{ $errors->first('Nom') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                         <div class="form-group{{ $errors->has('LastName') ? ' has-error' : '' }}">
-                            <label for="LastName" class="col-md-4 control-label">LastName</label>
+                         <div class="form-group{{ $errors->has('Prenom') ? ' has-error' : '' }}">
+                            <label for="Prenom" class="col-md-4 control-label">Prenom</label>
 
                             <div class="col-md-6">
-                                <input id="LastName" type="text" class="form-control" name="LastName" value="{{ old('LastName') }}" required autofocus>
+                                <input id="Prenom" type="text" class="form-control" name="Prenom" value="{{ old('Prenom') }}" required autofocus>
 
-                                @if ($errors->has('LastName'))
+                                @if ($errors->has('Prenom'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('LastName') }}</strong>
+                                        <strong>{{ $errors->first('Prenom') }}</strong>
                                     </span>
                                 @endif
                             </div>
