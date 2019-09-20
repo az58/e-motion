@@ -10,7 +10,7 @@ class Booking extends Model
 
     public $timestamps = true;
 
-    public function customer()
+    public function user()
     {
         return $this->belongsTo(User::class,'user_id');
     }

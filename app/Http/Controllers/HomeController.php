@@ -13,7 +13,7 @@ class HomeController extends Controller
      * @return void
      */
     public function __construct()
-    {
+    {die();
         $this->middleware('auth');
     }
 
