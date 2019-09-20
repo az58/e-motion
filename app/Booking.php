@@ -12,7 +12,7 @@ class Booking extends Model
 
     public function customer()
     {
-        return $this->belongsTo(Customer::class,'user_id');
+        return $this->belongsTo(User::class,'user_id');
     }
 
         public function vehicle()
