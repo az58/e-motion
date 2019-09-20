@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
-
-
-    protected  $_aCities        = [];
-
-
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +14,7 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        $vehicle = Vehicle::all(); dd($vehicle);
-
-       
+        $vehicle                                = Vehicle::all();
 
     }
 
