@@ -5,8 +5,18 @@ namespace App\Http\Controllers;
 use App\Vehicle;
 use Illuminate\Http\Request;
 
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Message\Request as GuzzRequest;
+use GuzzleHttp\Message\Response as GuzzReponse;
+
 class VehicleController extends Controller
 {
+
+
+    protected  $_aCities        = [];
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +25,27 @@ class VehicleController extends Controller
     public function index()
     {
         $vehicle = Vehicle::all();
-        dd($vehicle);
+
+        $apiCities = file_get_contents('https://pkgstore.datahub.io/core/world-cities/world-cities_json/data/5b3dd46ad10990bca47b04b4739a02ba/world-cities_json.json');
+        $aCites = json_decode($apiCities);
+
+
+
+        foreach ($aCites as $row){
+           if (!array_key_exists($row->country, $this->_aCities)) {
+               $this->_aCities[]= $row->country;
+           }
+
+            $this->_aCities[$row->country][] = $row->name;
+        }
+
+        $sCountry       = ucfirst('france');
+
+        $aCites         = array_reverse($this->_aCities[$sCountry]);
+
+
+        return view('products/show', compact('response'));
+
     }
 
     /**
